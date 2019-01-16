@@ -8,7 +8,7 @@ jobs:
             - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             - docker build -t php7light .
             - docker images
-            - docker tag php7light $DOCKER_USERNAME/php7light
+            - docker tag php7light $DOCKER_USERNAME/php7light:1.0
             - docker push $DOCKER_USERNAME/php7light
         - stage: test
           script: docker run --rm $DOCKER_USERNAME/php7light composer --version

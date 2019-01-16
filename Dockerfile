@@ -1,4 +1,4 @@
-from alpine:3.8 as builder
+from alpine:3.8
 LABEL maintainer="j.phetphoumy@gmail.com"
 
 ARG BUILD_DATE
