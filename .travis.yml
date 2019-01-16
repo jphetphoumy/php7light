@@ -1,10 +1,11 @@
 dist: trusty
+language: php
 
 jobs:
     include:
         - stage: Build docker php7light
           script:
-            - echo "$DOCKER_PASSWORD" | docker_login -u "$DOCKER_USERNAME" --password-stdin
+            - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             - docker build -t php7light .
             - docker images
             - docker tag php7light $DOCKER_USERNAME/php7light
